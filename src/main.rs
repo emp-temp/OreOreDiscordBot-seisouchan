@@ -1,11 +1,11 @@
 use poise::serenity_prelude as serenity;
 use dotenv::dotenv;
 
-struct Data {} // User data, which is stored and accessible in all command invocations
+struct Data {} // すべてのコマンド起動時に保存され、アクセス可能なユーザーデータ
 type Error = Box<dyn std::error::Error + Send + Sync>;
 type Context<'a> = poise::Context<'a, Data, Error>;
 
-/// Displays your or another user's account creation date
+/// ユーザーの作成日時を表示するコマンド
 #[poise::command(slash_command, prefix_command)]
 async fn age(
     ctx: Context<'_>,
